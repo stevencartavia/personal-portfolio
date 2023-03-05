@@ -6,7 +6,7 @@
     font-size: 30px;
 }
 
-.skills {
+.skills ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -14,13 +14,15 @@
     margin-top: 40px;
 }
 
-.skills div {
+.skills li {
+    text-align: center;
+    list-style-type: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transform: translateY(0px);
     transition: all 0.5s;
     padding: 10px;
 }
 
-.skills div:hover {
+.skills li:hover {
     transform: translateY(-10px);
 }

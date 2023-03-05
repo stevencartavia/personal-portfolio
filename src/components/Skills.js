@@ -1,4 +1,5 @@
 import React from "react";
+import {skills} from '../Portfolio';
 import './Skills.css';
 
 function Skills() {
@@ -8,21 +9,11 @@ function Skills() {
                 <h2 className="skills-title">Skills</h2>
             </div>
             <div className="skills">
-                <div>
-                    <h4>HTML</h4>
-                </div>
-                <div>
-                    <h4>CSS</h4>
-                </div>
-                <div>
-                    <h4>JavaScript</h4>
-                </div>
-                <div>
-                    <h4>React</h4>
-                </div>
-                <div>
-                    <h4>Git</h4>
-                </div>
+                <ul>
+                    {skills.map( skill => (
+                        <li key={skill}>{skill}</li>
+                    ))}
+                </ul>
             </div>
         </div>
     );

@@ -3,15 +3,15 @@ import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 function Contact() {
-    const [contact, setContact] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [formData, setFormData] = useState({
+        user_name: '', user_email: '', message: ''
+    });
     const form = useRef();
 
     const sendEmail = e => {
         e.preventDefault();
 
-        if(contact === '' || email === '' || message === '') {
+        if(formData.user_name === '' || formData.user_email === '' || formData.message === '') {
             alert('Please fill all the blanks.')
             return;
         }
@@ -19,24 +19,21 @@ function Contact() {
         emailjs.sendForm('service_teasun8', 'template_nbt8b75', form.current, 'OowmON-GXnptQHvB2')
           .then((result) => {
               console.log(result.text);
-              setContact('');
-              setEmail('');
-              setMessage('');
+              setFormData({
+                user_name: '', user_email: '', message: ''
+            });
           }, (error) => {
               console.log(error.text);
           });
       };
 
-      const handleContactChange = e => {
-        setContact(e.target.value);
-      }
-
-      const handleEmailChange = e => {
-        setEmail(e.target.value);
-      }
-
-      const handleMessageChange = e => {
-        setMessage(e.target.value);
+      const handleChange = e => {
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [e.target.name]: e.target.value
+            }
+        });
       }
 
     return (
@@ -47,11 +44,11 @@ function Contact() {
             <div className="form-container">
                 <form ref={form} className="form" onSubmit={sendEmail}>
                     <label>Name</label>
-                    <input className='name-input' onChange={handleContactChange} value={contact} type="text" name="user_name" />
+                    <input className='name-input' onChange={handleChange} value={formData.user_name} type="text" name="user_name" />
                     <label>Email</label>
-                    <input className='email-input' onChange={handleEmailChange} value={email} type="email" name="user_email" />
+                    <input className='email-input' onChange={handleChange} value={formData.user_email} type="email" name="user_email" />
                     <label>Message</label>
-                    <textarea className='textarea' onChange={handleMessageChange} value={message} name="message" />
+                    <textarea className='textarea' onChange={handleChange} value={formData.message} name="message" />
                     <input className='btn' type="submit" value="Send" />
                 </form>
             </div>
