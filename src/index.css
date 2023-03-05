@@ -27,7 +27,7 @@ a {
 
 @media (max-width: 700px) {
   .container {
-    width: fit-content;
+    width: 440px;
     margin: 0 auto;
   }
 }
