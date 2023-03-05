@@ -12,7 +12,7 @@ function Contact() {
         e.preventDefault();
 
         if(formData.user_name === '' || formData.user_email === '' || formData.message === '') {
-            alert('Please fill all the blanks.')
+            alert('Please fill all the fields.')
             return;
         }
     
