@@ -1,0 +1,107 @@
+.about {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container {
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+}
+
+.photo {
+    width: 120%;
+    height: 150%;
+    border-radius: 10px;
+}
+
+.personal-info {
+    margin-top: 60px;
+    text-align: center;
+    width: 600px;
+}
+
+.personal-info h1, .personal-info h3, .personal-info p {
+    margin: 20px 0;
+}
+
+.personal-info h1 {
+    font-size: 50px;
+}
+
+.personal-info h2 {
+    font-size: 28px;
+    margin: 30px 0;
+}
+
+.personal-info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.github, .linkedin, .insta {
+    font-size: 30px;
+    margin: 22px;
+    display: inline-block;
+    position: relative;
+}
+
+.github:after, .linkedin:after, .insta:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #8d6186;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.github:hover:after, .linkedin:hover:after, .insta:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media (max-width: 700px) {
+    .about {
+        width: 440px;
+        /* margin: 0 auto; */
+        margin-top: 80px;
+        margin-bottom: 70px;
+    }
+
+    .personal-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .personal-info h1 {
+        font-size: 35px;
+    }
+    
+    .personal-info h2 {
+        font-size: 25px;
+        margin: 30px 0;
+    }
+    
+    .personal-info p {
+        font-size: 20px;
+        width: 330px;
+        margin-bottom: 20px;
+    }
+
+    .github, .linkedin, .insta {
+        display: inline;
+    }
+
+    .about-links {
+        margin: 10px 0;
+    }
+}

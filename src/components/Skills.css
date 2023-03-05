@@ -1,0 +1,26 @@
+.skills-container {
+    margin-top: 100px;
+}
+
+.skills-title {
+    font-size: 30px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skills div {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateY(0px);
+    transition: all 0.5s;
+    padding: 10px;
+}
+
+.skills div:hover {
+    transform: translateY(-10px);
+}
